@@ -1,8 +1,30 @@
 import React from 'react'
 import s from './FriendMessage.module.css'
 
+export type FriendMessageType = {
+    id: number,
+    author: string,
+    text: string
+
+}
+
+export type FriendMessagePropsType = {
+    message: FriendMessageType
+}
+let arrMessages : FriendMessageType[]= [
+    {
+        id: 1, author: "First", text: "Hello"
+    },
+    {
+        id: 2, author: "Second", text: "Hallo"
+    },
+    {
+        id: 3, author: "Third", text: "Привет"
+    }
+]
+
 // создать тип вместо any и отобразить приходящие данные
-const FriendMessage = (props: any) => {
+const FriendMessage = (props: FriendMessagePropsType) => {
     return (
         <div
             id={'hw1-friend-message-' + props.message.id}
